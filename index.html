@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Decoration Landing page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="logo">
+                <a href="#">Decor</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">Home Dcor</a></li>
+                    <li><a href="">How it work</a></li>
+                    <li><a href="">
+                            <i class="fas fa-bars"></i>
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="index">
+                <p>01</p>
+            </div>
+            <div class="heading">
+                <h1><span>Beang at</span> home <br/></h1>
+                <p>meet your new comfort zone</p>
+            </div>
+        </div>
+        <div class="img-box">
+            
+            <div class="img img1">
+                <img src="/images/nicolas.jfif" alt="">
+            </div>
+            <div class="img img2">
+                <img src="/images/angel.jfif" alt="">
+            </div>
+            <div class="img img3">
+                <img src="/images/cristian.jfif" alt="">
+            </div>
+        </div>
+
+        <div class="circle">
+            <div class="sm sm1"></div>
+            <div class="sm sm2"></div>
+            <div class="sm sm3"></div>
+        </div>
+    </div> 
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+    <script>
+        document.querySelector('.sm3').addEventListener('click', ()=>{
+            gsap.to('.circle', {
+                rotate:'75deg',
+                duration: .5
+            });
+
+            gsap.to('.sm2',{
+                scale:1,
+                backgroundColor:'#1c1c1c',
+                duration:.5
+            });
+
+            gsap.to('.sm3', {
+                scale:8,
+                backgroundColor:'transparent',
+                rotate: '-70deg',
+                duration: .5
+            })
+
+            gsap.to('.sm1', {
+                scale:1,
+                backgroundColor:'#1c1c1c',
+                rotate: '-70deg',
+                duration: .5
+            })
+
+            gsap.to('.img', {
+                scale: 0,
+                duration: .5
+            })
+            gsap.to('.img3', {
+                scale: 1,
+                duration: .5,
+                delay: .2
+            })
+
+            document.querySelector('.index p').textContent = '03'
+            
+        });
+
+        document.querySelector('.sm2').addEventListener('click', ()=>{
+            gsap.to('.circle', {
+                rotate:'0deg',
+                duration: .5
+            });
+
+            gsap.to('.sm2',{
+                scale:8,
+                backgroundColor:'transparent',
+                duration:.5
+            });
+
+            gsap.to('.sm3', {
+                scale:1,
+                backgroundColor:'#1c1c1c',
+                rotate: '-70deg',
+                duration: .5
+            })
+
+            gsap.to('.sm1', {
+                scale:1,
+                backgroundColor:'#1c1c1c',
+                rotate: '-70deg',
+                duration: .5
+            })
+
+            gsap.to('.img', {
+                scale: 0,
+                duration: .5
+            })
+            gsap.to('.img2', {
+                scale: 1,
+                duration: .5,
+                delay: .2
+            })
+
+            document.querySelector('.index p').textContent = '02'
+            
+        });
+
+        document.querySelector('.sm1').addEventListener('click', ()=>{
+            gsap.to('.circle', {
+                rotate:'-60deg',
+                duration: .5
+            });
+
+            gsap.to('.sm1',{
+                scale:8,
+                backgroundColor:'transparent',
+                rotate: '55deg',
+                duration:.5
+            });
+
+            gsap.to('.sm2', {
+                scale:1,
+                backgroundColor:'#1c1c1c',
+                duration: .5
+            })
+
+            gsap.to('.img', {
+                scale: 0,
+                duration: .5
+            })
+            gsap.to('.img1', {
+                scale: 1,
+                duration: .5,
+                delay: .2
+            })
+
+            document.querySelector('.index p').textContent = '01'
+            
+        })
+    </script>
+</body>
+
+</html>
